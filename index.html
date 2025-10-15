@@ -603,6 +603,37 @@
       font-size: 16px;
     }
 
+    /* Table Number Input */
+    .table-number-section {
+      margin-bottom: 20px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .table-number-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--gold2);
+    }
+
+    .table-number-input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 16px;
+    }
+
+    .table-number-input:focus {
+      outline: none;
+      border-color: var(--gold2);
+    }
+
     /* Print Button */
     .print-container {
       display: flex;
@@ -630,20 +661,19 @@
     }
 
     .title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-start;
-}
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: flex-start;
+    }
 
-.site-logo {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  margin-left: 10px;
-  border-radius: 8px; /* make corners slightly round */
-}
-
+    .site-logo {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-left: 10px;
+      border-radius: 8px; /* make corners slightly round */
+    }
 
     /* Tablet and Desktop Styles */
     @media (min-width: 768px) {
@@ -727,7 +757,7 @@
         <div>
           <h2 class="title">
             Hotel Jabardast
-          <img src="logo.PNG" alt="Logo" class="site-logo">
+          <img src="logo.png" alt="Logo" class="site-logo">
           </h2>
 
           <div class="subtitle"> • Veg — Non Veg</div>
@@ -790,6 +820,12 @@
         <button class="close-cart" id="closeCart">&times;</button>
       </div>
       
+      <!-- Table Number Input Section -->
+      <div class="table-number-section">
+        <label for="tableNumber" class="table-number-label">Enter Table Number</label>
+        <input type="text" id="tableNumber" class="table-number-input" placeholder="e.g., Table 5" />
+      </div>
+      
       <div class="cart-items" id="cartItems">
         <!-- Cart items will be inserted here -->
         <div class="cart-empty" id="cartEmpty">Your cart is empty</div>
@@ -841,110 +877,352 @@
 {id:306,cat:'Veg',name:'पनीर कोल्हापुरी (Paneer Kolhapuri)',desc:'Spicy Kolhapuri-style paneer curry',price:'₹250',tags:['Paneer','Spicy'],img:'img/paneer-kolhapuri.jpg'},
 {id:307,cat:'Veg',name:'पनीर मसाला (Paneer Masala)',desc:'Rich paneer curry with spices',price:'₹240',tags:['Paneer','Masala'],img:'img/paneer-masala.jpg'},
 {id:308,cat:'Veg',name:'पनीर टिक्का मसाला (Paneer Tikka Masala)',desc:'Paneer tikka in spicy gravy',price:'₹260',tags:['Paneer','Tikka'],img:'img/paneer-tikka-masala.jpg'},
-{id:309,cat:'Veg',name:'पनीर बटर मसाला (Paneer Butter Masala)',desc:'Paneer in creamy butter gravy',price:'₹260',tags:['Paneer','Creamy'],img:'img/paneer-butter-masala.jpg'},
-{id:310,cat:'Veg',name:'पनीर भुर्जी (Paneer Bhurji)',desc:'Scrambled paneer with masala',price:'₹200',tags:['Paneer','Spicy'],img:'img/paneer-bhurji.jpg'},
-{id:311,cat:'Veg',name:'व्हेज मखनीवाला (Veg Makhaniwala)',desc:'Mixed vegetables in buttery makhani gravy',price:'₹200',tags:['Veg','Creamy'],img:'img/veg-makhaniwala.jpg'},
-{id:312,cat:'Veg',name:'व्हेज कोल्हापुरी (Veg Kolhapuri)',desc:'Spicy Kolhapuri-style mixed veg',price:'₹240',tags:['Veg','Spicy'],img:'img/veg-kolhapuri.jpg'},
-{id:313,cat:'Veg',name:'मिक्स व्हेज (Mix Veg)',desc:'Mixed vegetables cooked with Indian spices',price:'₹220',tags:['Veg','Mixed'],img:'img/mix-veg.jpg'},
+{id:309,cat:'Veg',name:'पनीर बटर मसाला (Paneer Butter Masala)',desc:'Paneer in creamy butter gravy',price:'₹260',tags:['Paneer','Butter'],img:'img/paneer-butter-masala.jpg'},
+{id:310,cat:'Veg',name:'पनीर कुरमा (Paneer Kurma)',desc:'Paneer in creamy korma gravy',price:'₹240',tags:['Paneer','Creamy'],img:'img/paneer-kurma.jpg'},
+{id:311,cat:'Veg',name:'पनीर पालक (Paneer Palak)',desc:'Paneer in spinach gravy',price:'₹240',tags:['Paneer','Palak'],img:'img/paneer-palak.jpg'},
+{id:312,cat:'Veg',name:'पनीर दोपियाजा (Paneer Do Piaza)',desc:'Paneer with double onions',price:'₹240',tags:['Paneer','Onion'],img:'img/paneer-dopiaza.jpg'},
+{id:313,cat:'Veg',name:'पनीर हंदी (Paneer Handi)',desc:'Paneer cooked in handi style',price:'₹260',tags:['Paneer','Handi'],img:'img/paneer-handi.jpg'},
+{id:314,cat:'Veg',name:'मटर पनीर (Matar Paneer)',desc:'Paneer and peas curry',price:'₹240',tags:['Paneer','Peas'],img:'img/matar-paneer.jpg'},
+{id:315,cat:'Veg',name:'मटर मशरूम (Matar Mushroom)',desc:'Peas and mushroom curry',price:'₹200',tags:['Mushroom','Peas'],img:'img/matar-mushroom.jpg'},
+{id:316,cat:'Veg',name:'मशरूम मसाला (Mushroom Masala)',desc:'Mushroom in spicy gravy',price:'₹200',tags:['Mushroom','Spicy'],img:'img/mushroom-masala.jpg'},
+{id:317,cat:'Veg',name:'मशरूम दोपियाजा (Mushroom Do Piaza)',desc:'Mushroom with double onions',price:'₹200',tags:['Mushroom','Onion'],img:'img/mushroom-dopiaza.jpg'},
+{id:318,cat:'Veg',name:'मशरूम हंदी (Mushroom Handi)',desc:'Mushroom cooked in handi style',price:'₹220',tags:['Mushroom','Handi'],img:'img/mushroom-handi.jpg'},
+{id:319,cat:'Veg',name:'मिक्स वेज (Mix Veg)',desc:'Mixed vegetable curry',price:'₹180',tags:['Veg','Mixed'],img:'img/mix-veg.jpg'},
+{id:320,cat:'Veg',name:'वेज कोल्हापुरी (Veg Kolhapuri)',desc:'Spicy mixed vegetable curry',price:'₹200',tags:['Veg','Spicy'],img:'img/veg-kolhapuri.jpg'},
+{id:321,cat:'Veg',name:'वेज हंदी (Veg Handi)',desc:'Mixed vegetables cooked in handi style',price:'₹220',tags:['Veg','Handi'],img:'img/veg-handi.jpg'},
+{id:322,cat:'Veg',name:'वेज कुरमा (Veg Kurma)',desc:'Mixed vegetables in creamy korma',price:'₹180',tags:['Veg','Creamy'],img:'img/veg-kurma.jpg'},
+{id:323,cat:'Veg',name:'वेज जलफ्रेजी (Veg Jalfrezi)',desc:'Mixed vegetables in jalfrezi style',price:'₹200',tags:['Veg','Jalfrezi'],img:'img/veg-jalfrezi.jpg'},
+{id:324,cat:'Veg',name:'वेज दोपियाजा (Veg Do Piaza)',desc:'Mixed vegetables with double onions',price:'₹180',tags:['Veg','Onion'],img:'img/veg-dopiaza.jpg'},
+{id:325,cat:'Veg',name:'वेज मसाला (Veg Masala)',desc:'Mixed vegetables in spicy gravy',price:'₹180',tags:['Veg','Spicy'],img:'img/veg-masala.jpg'},
+{id:326,cat:'Veg',name:'वेज बटर मसाला (Veg Butter Masala)',desc:'Mixed vegetables in butter gravy',price:'₹200',tags:['Veg','Butter'],img:'img/veg-butter-masala.jpg'},
+{id:327,cat:'Veg',name:'वेज कडाई (Veg Kadai)',desc:'Mixed vegetables in kadai style',price:'₹200',tags:['Veg','Kadai'],img:'img/veg-kadai.jpg'},
+{id:328,cat:'Veg',name:'वेज भुर्जी (Veg Bhurji)',desc:'Scrambled vegetables',price:'₹160',tags:['Veg','Scrambled'],img:'img/veg-bhurji.jpg'},
+{id:329,cat:'Veg',name:'पालक पनीर (Palak Paneer)',desc:'Paneer in spinach gravy',price:'₹240',tags:['Paneer','Palak'],img:'img/palak-paneer.jpg'},
+{id:330,cat:'Veg',name:'पालक मटर (Palak Matar)',desc:'Spinach and peas curry',price:'₹180',tags:['Palak','Peas'],img:'img/palak-matar.jpg'},
+{id:331,cat:'Veg',name:'पालक कॉर्न (Palak Corn)',desc:'Spinach and sweet corn curry',price:'₹180',tags:['Palak','Corn'],img:'img/palak-corn.jpg'},
+{id:332,cat:'Veg',name:'पालक मशरूम (Palak Mushroom)',desc:'Spinach and mushroom curry',price:'₹200',tags:['Palak','Mushroom'],img:'img/palak-mushroom.jpg'},
+{id:333,cat:'Veg',name:'मलाई कोफता (Malai Kofta)',desc:'Creamy kofta curry',price:'₹240',tags:['Kofta','Creamy'],img:'img/malai-kofta.jpg'},
+{id:334,cat:'Veg',name:'नवरतन कोरमा (Navratan Korma)',desc:'Nine-gem vegetable korma',price:'₹240',tags:['Veg','Korma'],img:'img/navratan-korma.jpg'},
+{id:335,cat:'Veg',name:'दाल मखनी (Dal Makhani)',desc:'Creamy black lentil curry',price:'₹180',tags:['Dal','Creamy'],img:'img/dal-makhani.jpg'},
+{id:336,cat:'Veg',name:'दाल तडका (Dal Tadka)',desc:'Tempered lentil curry',price:'₹140',tags:['Dal','Tadka'],img:'img/dal-tadka.jpg'},
+{id:337,cat:'Veg',name:'दाल फ्राई (Dal Fry)',desc:'Fried lentil curry',price:'₹140',tags:['Dal','Fry'],img:'img/dal-fry.jpg'},
+{id:338,cat:'Veg',name:'चना मसाला (Chana Masala)',desc:'Spicy chickpea curry',price:'₹160',tags:['Chana','Spicy'],img:'img/chana-masala.jpg'},
+{id:339,cat:'Veg',name:'राजमा (Rajma)',desc:'Kidney bean curry',price:'₹160',tags:['Rajma','Curry'],img:'img/rajma.jpg'},
+{id:340,cat:'Veg',name:'मटर पनीर (Matar Paneer)',desc:'Paneer and peas curry',price:'₹240',tags:['Paneer','Peas'],img:'img/matar-paneer.jpg'},
+{id:341,cat:'Veg',name:'मटर मशरूम (Matar Mushroom)',desc:'Peas and mushroom curry',price:'₹200',tags:['Mushroom','Peas'],img:'img/matar-mushroom.jpg'},
 
-// Veg Special (व्हेज स्पेशल)
-{id:314,cat:'Veg Special',name:'पनीर मुस्सलम (Paneer Mussalam)',desc:'Rich and creamy paneer curry',price:'₹240',tags:['Paneer','Special'],img:'img/paneer-mussalam.jpg'},
-{id:315,cat:'Veg Special',name:'पनीर मालवणी (Paneer Malvani)',desc:'Paneer curry in Malvani-style gravy',price:'₹240',tags:['Paneer','Malvani'],img:'img/paneer-malvani.jpg'},
-{id:316,cat:'Veg Special',name:'काजू मालवणी (Kaju Malvani)',desc:'Cashew curry cooked in Malvani masala',price:'₹240',tags:['Kaju','Malvani'],img:'img/kaju-malvani.jpg'},
-{id:317,cat:'Veg Special',name:'व्हेज मखनी (Veg Makhani)',desc:'Vegetables cooked in buttery makhani sauce',price:'₹240',tags:['Veg','Creamy'],img:'img/veg-makhani.jpg'},
-{id:318,cat:'Veg Special',name:'व्हेज मालवणी (Veg Malvani)',desc:'Spicy Malvani-style vegetable curry',price:'₹200',tags:['Veg','Malvani'],img:'img/veg-malvani.jpg'},
-{id:319,cat:'Veg Special',name:'अख्खा मसूर तडका (Akha Masoor Tadka)',desc:'Whole masoor lentil cooked with tadka',price:'₹120',tags:['Dal','Masoor'],img:'img/akha-masoor-tadka.jpg'},
-{id:320,cat:'Veg Special',name:'अख्खा मसूर (Akha Masoor)',desc:'Whole masoor lentil curry',price:'₹100',tags:['Dal','Masoor'],img:'img/akha-masoor.jpg'},
-{id:321,cat:'Veg Special',name:'डाळ मखखन (Dal Makhani)',desc:'Creamy black lentil dal',price:'₹120',tags:['Dal','Creamy'],img:'img/dal-makhani.jpg'},
-{id:322,cat:'Veg Special',name:'डाळ तडका (Dal Tadka)',desc:'Yellow dal with tempering',price:'₹100',tags:['Dal','Tadka'],img:'img/dal-tadka.jpg'},
-{id:323,cat:'Veg Special',name:'डाळ फ्राय (Dal Fry)',desc:'Fried yellow dal with masala',price:'₹80',tags:['Dal','Fried'],img:'img/dal-fry.jpg'},
+
+// Veg Special (वेज स्पेशल)
+{id:401,cat:'Veg Special',name:'पनीर अफगानी (Paneer Afghani)',desc:'Creamy Afghani-style paneer',price:'₹280',tags:['Paneer','Creamy'],img:'img/paneer-afghani.jpg'},
+{id:402,cat:'Veg Special',name:'पनीर लाजवाब (Paneer Lajawab)',desc:'Delicious paneer preparation',price:'₹280',tags:['Paneer','Special'],img:'img/paneer-lajawab.jpg'},
+{id:403,cat:'Veg Special',name:'पनीर शाही (Paneer Shahi)',desc:'Royal paneer curry',price:'₹280',tags:['Paneer','Royal'],img:'img/paneer-shahi.jpg'},
+{id:404,cat:'Veg Special',name:'पनीर पसंदा (Paneer Pasanda)',desc:'Paneer stuffed with dry fruits',price:'₹300',tags:['Paneer','Stuffed'],img:'img/paneer-pasanda.jpg'},
+{id:405,cat:'Veg Special',name:'पनीर हरा भरा (Paneer Hara Bhara)',desc:'Green paneer preparation',price:'₹280',tags:['Paneer','Green'],img:'img/paneer-hara-bhara.jpg'},
+{id:406,cat:'Veg Special',name:'पनीर लहसुनी (Paneer Lahasuni)',desc:'Garlic-flavored paneer',price:'₹280',tags:['Paneer','Garlic'],img:'img/paneer-lahasuni.jpg'},
+{id:407,cat:'Veg Special',name:'पनीर कश्मीरी (Paneer Kashmiri)',desc:'Kashmiri-style paneer',price:'₹280',tags:['Paneer','Kashmiri'],img:'img/paneer-kashmiri.jpg'},
+{id:408,cat:'Veg Special',name:'पनीर मखनी (Paneer Makhani)',desc:'Paneer in rich butter gravy',price:'₹280',tags:['Paneer','Butter'],img:'img/paneer-makhani.jpg'},
+{id:409,cat:'Veg Special',name:'पनीर हवाई (Paneer Hawai)',desc:'Pineapple-flavored paneer',price:'₹280',tags:['Paneer','Pineapple'],img:'img/paneer-hawai.jpg'},
+{id:410,cat:'Veg Special',name:'पनीर बादामी (Paneer Badami)',desc:'Paneer in almond gravy',price:'₹300',tags:['Paneer','Almond'],img:'img/paneer-badami.jpg'},
+{id:411,cat:'Veg Special',name:'मटर पनीर नवाबी (Matar Paneer Nawabi)',desc:'Royal peas and paneer curry',price:'₹280',tags:['Paneer','Royal'],img:'img/matar-paneer-nawabi.jpg'},
+{id:412,cat:'Veg Special',name:'मटर मशरूम स्पेशल (Matar Mushroom Special)',desc:'Special peas and mushroom curry',price:'₹240',tags:['Mushroom','Special'],img:'img/matar-mushroom-special.jpg'},
+{id:413,cat:'Veg Special',name:'मशरूम लाजवाब (Mushroom Lajawab)',desc:'Delicious mushroom preparation',price:'₹240',tags:['Mushroom','Special'],img:'img/mushroom-lajawab.jpg'},
+{id:414,cat:'Veg Special',name:'मशरूम शाही (Mushroom Shahi)',desc:'Royal mushroom curry',price:'₹240',tags:['Mushroom','Royal'],img:'img/mushroom-shahi.jpg'},
+{id:415,cat:'Veg Special',name:'मशरूम मखनी (Mushroom Makhani)',desc:'Mushroom in rich butter gravy',price:'₹240',tags:['Mushroom','Butter'],img:'img/mushroom-makhani.jpg'},
+{id:416,cat:'Veg Special',name:'मशरूम कश्मीरी (Mushroom Kashmiri)',desc:'Kashmiri-style mushroom',price:'₹240',tags:['Mushroom','Kashmiri'],img:'img/mushroom-kashmiri.jpg'},
+{id:417,cat:'Veg Special',name:'वेज डिलाईट (Veg Delight)',desc:'Delightful mixed vegetable curry',price:'₹220',tags:['Veg','Special'],img:'img/veg-delight.jpg'},
+{id:418,cat:'Veg Special',name:'वेज शाही (Veg Shahi)',desc:'Royal mixed vegetable curry',price:'₹220',tags:['Veg','Royal'],img:'img/veg-shahi.jpg'},
+{id:419,cat:'Veg Special',name:'वेज नवाबी (Veg Nawabi)',desc:'Nawabi-style mixed vegetables',price:'₹240',tags:['Veg','Nawabi'],img:'img/veg-nawabi.jpg'},
+{id:420,cat:'Veg Special',name:'वेज मखनी (Veg Makhani)',desc:'Mixed vegetables in butter gravy',price:'₹240',tags:['Veg','Butter'],img:'img/veg-makhani.jpg'},
+{id:421,cat:'Veg Special',name:'वेज बादामी (Veg Badami)',desc:'Mixed vegetables in almond gravy',price:'₹240',tags:['Veg','Almond'],img:'img/veg-badami.jpg'},
+{id:422,cat:'Veg Special',name:'वेज अफगानी (Veg Afghani)',desc:'Afghani-style mixed vegetables',price:'₹240',tags:['Veg','Afghani'],img:'img/veg-afghani.jpg'},
+{id:423,cat:'Veg Special',name:'वेज कश्मीरी (Veg Kashmiri)',desc:'Kashmiri-style mixed vegetables',price:'₹240',tags:['Veg','Kashmiri'],img:'img/veg-kashmiri.jpg'},
+{id:424,cat:'Veg Special',name:'वेज हवाई (Veg Hawai)',desc:'Pineapple-flavored mixed vegetables',price:'₹240',tags:['Veg','Pineapple'],img:'img/veg-hawai.jpg'},
+{id:425,cat:'Veg Special',name:'वेज लहसुनी (Veg Lahasuni)',desc:'Garlic-flavored mixed vegetables',price:'₹240',tags:['Veg','Garlic'],img:'img/veg-lahasuni.jpg'},
+{id:426,cat:'Veg Special',name:'वेज लाजवाब (Veg Lajawab)',desc:'Delicious mixed vegetable preparation',price:'₹240',tags:['Veg','Special'],img:'img/veg-lajawab.jpg'},
+{id:427,cat:'Veg Special',name:'वेज पसंदा (Veg Pasanda)',desc:'Stuffed vegetable preparation',price:'₹260',tags:['Veg','Stuffed'],img:'img/veg-pasanda.jpg'},
+{id:428,cat:'Veg Special',name:'वेज शाश्लीक (Veg Shashlik)',desc:'Vegetable shashlik',price:'₹240',tags:['Veg','Shashlik'],img:'img/veg-shashlik.jpg'},
+{id:429,cat:'Veg Special',name:'वेज हंदी स्पेशल (Veg Handi Special)',desc:'Special handi-style vegetables',price:'₹260',tags:['Veg','Handi'],img:'img/veg-handi-special.jpg'},
+{id:430,cat:'Veg Special',name:'वेज कोल्हापुरी स्पेशल (Veg Kolhapuri Special)',desc:'Special spicy Kolhapuri vegetables',price:'₹240',tags:['Veg','Spicy'],img:'img/veg-kolhapuri-special.jpg'},
+{id:431,cat:'Veg Special',name:'वेज कडाई स्पेशल (Veg Kadai Special)',desc:'Special kadai-style vegetables',price:'₹240',tags:['Veg','Kadai'],img:'img/veg-kadai-special.jpg'},
+{id:432,cat:'Veg Special',name:'वेज जलफ्रेजी स्पेशल (Veg Jalfrezi Special)',desc:'Special jalfrezi-style vegetables',price:'₹240',tags:['Veg','Jalfrezi'],img:'img/veg-jalfrezi-special.jpg'},
+{id:433,cat:'Veg Special',name:'वेज दोपियाजा स्पेशल (Veg Do Piaza Special)',desc:'Special double onion vegetables',price:'₹220',tags:['Veg','Onion'],img:'img/veg-dopiaza-special.jpg'},
+{id:434,cat:'Veg Special',name:'वेज मसाला स्पेशल (Veg Masala Special)',desc:'Special spicy vegetable curry',price:'₹220',tags:['Veg','Spicy'],img:'img/veg-masala-special.jpg'},
+{id:435,cat:'Veg Special',name:'वेज बटर मसाला स्पेशल (Veg Butter Masala Special)',desc:'Special butter vegetable curry',price:'₹240',tags:['Veg','Butter'],img:'img/veg-butter-masala-special.jpg'},
+{id:436,cat:'Veg Special',name:'वेज कुरमा स्पेशल (Veg Kurma Special)',desc:'Special creamy vegetable korma',price:'₹220',tags:['Veg','Creamy'],img:'img/veg-kurma-special.jpg'},
+{id:437,cat:'Veg Special',name:'वेज भुर्जी स्पेशल (Veg Bhurji Special)',desc:'Special scrambled vegetables',price:'₹200',tags:['Veg','Scrambled'],img:'img/veg-bhurji-special.jpg'},
+{id:438,cat:'Veg Special',name:'पालक पनीर स्पेशल (Palak Paneer Special)',desc:'Special paneer in spinach gravy',price:'₹280',tags:['Paneer','Palak'],img:'img/palak-paneer-special.jpg'},
+{id:439,cat:'Veg Special',name:'पालक मटर स्पेशल (Palak Matar Special)',desc:'Special spinach and peas curry',price:'₹220',tags:['Palak','Peas'],img:'img/palak-matar-special.jpg'},
+{id:440,cat:'Veg Special',name:'पालक कॉर्न स्पेशल (Palak Corn Special)',desc:'Special spinach and corn curry',price:'₹220',tags:['Palak','Corn'],img:'img/palak-corn-special.jpg'},
+{id:441,cat:'Veg Special',name:'पालक मशरूम स्पेशल (Palak Mushroom Special)',desc:'Special spinach and mushroom curry',price:'₹240',tags:['Palak','Mushroom'],img:'img/palak-mushroom-special.jpg'},
+{id:442,cat:'Veg Special',name:'मलाई कोफता स्पेशल (Malai Kofta Special)',desc:'Special creamy kofta curry',price:'₹280',tags:['Kofta','Creamy'],img:'img/malai-kofta-special.jpg'},
+{id:443,cat:'Veg Special',name:'नवरतन कोरमा स्पेशल (Navratan Korma Special)',desc:'Special nine-gem vegetable korma',price:'₹280',tags:['Veg','Korma'],img:'img/navratan-korma-special.jpg'},
+{id:444,cat:'Veg Special',name:'दाल मखनी स्पेशल (Dal Makhani Special)',desc:'Special creamy black lentil curry',price:'₹220',tags:['Dal','Creamy'],img:'img/dal-makhani-special.jpg'},
+{id:445,cat:'Veg Special',name:'दाल तडका स्पेशल (Dal Tadka Special)',desc:'Special tempered lentil curry',price:'₹180',tags:['Dal','Tadka'],img:'img/dal-tadka-special.jpg'},
+{id:446,cat:'Veg Special',name:'दाल फ्राई स्पेशल (Dal Fry Special)',desc:'Special fried lentil curry',price:'₹180',tags:['Dal','Fry'],img:'img/dal-fry-special.jpg'},
+{id:447,cat:'Veg Special',name:'चना मसाला स्पेशल (Chana Masala Special)',desc:'Special spicy chickpea curry',price:'₹200',tags:['Chana','Spicy'],img:'img/chana-masala-special.jpg'},
+{id:448,cat:'Veg Special',name:'राजमा स्पेशल (Rajma Special)',desc:'Special kidney bean curry',price:'₹200',tags:['Rajma','Curry'],img:'img/rajma-special.jpg'},
+{id:449,cat:'Veg Special',name:'मटर पनीर स्पेशल (Matar Paneer Special)',desc:'Special paneer and peas curry',price:'₹280',tags:['Paneer','Peas'],img:'img/matar-paneer-special.jpg'},
+{id:450,cat:'Veg Special',name:'मटर मशरूम स्पेशल (Matar Mushroom Special)',desc:'Special peas and mushroom curry',price:'₹240',tags:['Mushroom','Peas'],img:'img/matar-mushroom-special.jpg'},
+
 
 // Chicken Special (चिकन स्पेशल)
-{id:401,cat:'Chicken Special',name:'बटर चिकन (Butter Chicken)',desc:'Creamy and rich butter chicken curry',price:'₹260/340',tags:['Chicken','Butter'],img:'img/butter-chicken.jpg'},
-{id:402,cat:'Chicken Special',name:'चिकन मालवणी (Chicken Malvani)',desc:'Spicy Malvani-style chicken curry',price:'₹300/340',tags:['Chicken','Malvani'],img:'img/chicken-malvani.jpg'},
-{id:403,cat:'Chicken Special',name:'चिकन हंडी (Chicken Handi)',desc:'Chicken cooked in handi-style gravy',price:'₹300/340',tags:['Chicken','Handi'],img:'img/chicken-handi.jpg'},
-{id:404,cat:'Chicken Special',name:'चिकन रानमसाला (Chicken Ranmasala)',desc:'Rich and spicy chicken curry',price:'₹270/390',tags:['Chicken','Spicy'],img:'img/chicken-rammasala.jpg'},
-{id:405,cat:'Chicken Special',name:'चिकन मुग मुस्सलम (Chicken Murg Mussalam)',desc:'Whole chicken cooked in royal Mughlai style',price:'₹300/800',tags:['Chicken','Mughlai'],img:'img/chicken-murg-mussalam.jpg'},
-{id:406,cat:'Chicken Special',name:'चिकन फ्राय (Chicken Fry)',desc:'Crispy fried chicken pieces',price:'₹230',tags:['Chicken','Fried'],img:'img/chicken-fry.jpg'},
-{id:407,cat:'Chicken Special',name:'चिकन मसाला (Chicken Masala)',desc:'Traditional spicy chicken masala',price:'₹250',tags:['Chicken','Masala'],img:'img/chicken-masala.jpg'},
-{id:408,cat:'Chicken Special',name:'चिकन कोल्हापुरी (Chicken Kolhapuri)',desc:'Spicy Kolhapuri-style chicken curry',price:'₹260',tags:['Chicken','Spicy'],img:'img/chicken-kolhapuri.jpg'},
+{id:501,cat:'Chicken Special',name:'चिकन अफगानी (Chicken Afghani)',desc:'Creamy Afghani-style chicken',price:'₹280',tags:['Chicken','Creamy'],img:'img/chicken-afghani.jpg'},
+{id:502,cat:'Chicken Special',name:'चिकन लाजवाब (Chicken Lajawab)',desc:'Delicious chicken preparation',price:'₹280',tags:['Chicken','Special'],img:'img/chicken-lajawab.jpg'},
+{id:503,cat:'Chicken Special',name:'चिकन शाही (Chicken Shahi)',desc:'Royal chicken curry',price:'₹280',tags:['Chicken','Royal'],img:'img/chicken-shahi.jpg'},
+{id:504,cat:'Chicken Special',name:'चिकन पसंदा (Chicken Pasanda)',desc:'Chicken stuffed with dry fruits',price:'₹300',tags:['Chicken','Stuffed'],img:'img/chicken-pasanda.jpg'},
+{id:505,cat:'Chicken Special',name:'चिकन हरा भरा (Chicken Hara Bhara)',desc:'Green chicken preparation',price:'₹280',tags:['Chicken','Green'],img:'img/chicken-hara-bhara.jpg'},
+{id:506,cat:'Chicken Special',name:'चिकन लहसुनी (Chicken Lahasuni)',desc:'Garlic-flavored chicken',price:'₹280',tags:['Chicken','Garlic'],img:'img/chicken-lahasuni.jpg'},
+{id:507,cat:'Chicken Special',name:'चिकन कश्मीरी (Chicken Kashmiri)',desc:'Kashmiri-style chicken',price:'₹280',tags:['Chicken','Kashmiri'],img:'img/chicken-kashmiri.jpg'},
+{id:508,cat:'Chicken Special',name:'चिकन मखनी (Chicken Makhani)',desc:'Chicken in rich butter gravy',price:'₹280',tags:['Chicken','Butter'],img:'img/chicken-makhani.jpg'},
+{id:509,cat:'Chicken Special',name:'चिकन हवाई (Chicken Hawai)',desc:'Pineapple-flavored chicken',price:'₹280',tags:['Chicken','Pineapple'],img:'img/chicken-hawai.jpg'},
+{id:510,cat:'Chicken Special',name:'चिकन बादामी (Chicken Badami)',desc:'Chicken in almond gravy',price:'₹300',tags:['Chicken','Almond'],img:'img/chicken-badami.jpg'},
+{id:511,cat:'Chicken Special',name:'चिकन टिक्का मसाला (Chicken Tikka Masala)',desc:'Chicken tikka in spicy gravy',price:'₹280',tags:['Chicken','Tikka'],img:'img/chicken-tikka-masala.jpg'},
+{id:512,cat:'Chicken Special',name:'चिकन कोल्हापुरी (Chicken Kolhapuri)',desc:'Spicy Kolhapuri-style chicken',price:'₹280',tags:['Chicken','Spicy'],img:'img/chicken-kolhapuri.jpg'},
+{id:513,cat:'Chicken Special',name:'चिकन हंदी (Chicken Handi)',desc:'Chicken cooked in handi style',price:'₹280',tags:['Chicken','Handi'],img:'img/chicken-handi.jpg'},
+{id:514,cat:'Chicken Special',name:'चिकन कुरमा (Chicken Kurma)',desc:'Chicken in creamy korma gravy',price:'₹280',tags:['Chicken','Creamy'],img:'img/chicken-kurma.jpg'},
+{id:515,cat:'Chicken Special',name:'चिकन जलफ्रेजी (Chicken Jalfrezi)',desc:'Chicken in jalfrezi style',price:'₹280',tags:['Chicken','Jalfrezi'],img:'img/chicken-jalfrezi.jpg'},
+{id:516,cat:'Chicken Special',name:'चिकन दोपियाजा (Chicken Do Piaza)',desc:'Chicken with double onions',price:'₹280',tags:['Chicken','Onion'],img:'img/chicken-dopiaza.jpg'},
+{id:517,cat:'Chicken Special',name:'चिकन मसाला (Chicken Masala)',desc:'Chicken in spicy gravy',price:'₹280',tags:['Chicken','Spicy'],img:'img/chicken-masala.jpg'},
+{id:518,cat:'Chicken Special',name:'चिकन बटर मसाला (Chicken Butter Masala)',desc:'Chicken in butter gravy',price:'₹280',tags:['Chicken','Butter'],img:'img/chicken-butter-masala.jpg'},
+{id:519,cat:'Chicken Special',name:'चिकन कडाई (Chicken Kadai)',desc:'Chicken in kadai style',price:'₹280',tags:['Chicken','Kadai'],img:'img/chicken-kadai.jpg'},
+{id:520,cat:'Chicken Special',name:'चिकन भुर्जी (Chicken Bhurji)',desc:'Scrambled chicken',price:'₹240',tags:['Chicken','Scrambled'],img:'img/chicken-bhurji.jpg'},
+{id:521,cat:'Chicken Special',name:'चिकन पालक (Chicken Palak)',desc:'Chicken in spinach gravy',price:'₹280',tags:['Chicken','Palak'],img:'img/chicken-palak.jpg'},
+{id:522,cat:'Chicken Special',name:'चिकन हंदी स्पेशल (Chicken Handi Special)',desc:'Special handi-style chicken',price:'₹300',tags:['Chicken','Handi'],img:'img/chicken-handi-special.jpg'},
+{id:523,cat:'Chicken Special',name:'चिकन कोल्हापुरी स्पेशल (Chicken Kolhapuri Special)',desc:'Special spicy Kolhapuri chicken',price:'₹300',tags:['Chicken','Spicy'],img:'img/chicken-kolhapuri-special.jpg'},
+{id:524,cat:'Chicken Special',name:'चिकन कडाई स्पेशल (Chicken Kadai Special)',desc:'Special kadai-style chicken',price:'₹300',tags:['Chicken','Kadai'],img:'img/chicken-kadai-special.jpg'},
+{id:525,cat:'Chicken Special',name:'चिकन जलफ्रेजी स्पेशल (Chicken Jalfrezi Special)',desc:'Special jalfrezi-style chicken',price:'₹300',tags:['Chicken','Jalfrezi'],img:'img/chicken-jalfrezi-special.jpg'},
+{id:526,cat:'Chicken Special',name:'चिकन दोपियाजा स्पेशल (Chicken Do Piaza Special)',desc:'Special double onion chicken',price:'₹280',tags:['Chicken','Onion'],img:'img/chicken-dopiaza-special.jpg'},
+{id:527,cat:'Chicken Special',name:'चिकन मसाला स्पेशल (Chicken Masala Special)',desc:'Special spicy chicken curry',price:'₹280',tags:['Chicken','Spicy'],img:'img/chicken-masala-special.jpg'},
+{id:528,cat:'Chicken Special',name:'चिकन बटर मसाला स्पेशल (Chicken Butter Masala Special)',desc:'Special butter chicken curry',price:'₹300',tags:['Chicken','Butter'],img:'img/chicken-butter-masala-special.jpg'},
+{id:529,cat:'Chicken Special',name:'चिकन कुरमा स्पेशल (Chicken Kurma Special)',desc:'Special creamy chicken korma',price:'₹280',tags:['Chicken','Creamy'],img:'img/chicken-kurma-special.jpg'},
+{id:530,cat:'Chicken Special',name:'चिकन भुर्जी स्पेशल (Chicken Bhurji Special)',desc:'Special scrambled chicken',price:'₹260',tags:['Chicken','Scrambled'],img:'img/chicken-bhurji-special.jpg'},
+{id:531,cat:'Chicken Special',name:'चिकन पालक स्पेशल (Chicken Palak Special)',desc:'Special chicken in spinach gravy',price:'₹300',tags:['Chicken','Palak'],img:'img/chicken-palak-special.jpg'},
 
-// Mutton Special (मटण स्पेशल)
-{id:409,cat:'Mutton Special',name:'मटण मालवणी (Mutton Malvani)',desc:'Spicy Malvani-style mutton curry',price:'₹600/840',tags:['Mutton','Malvani'],img:'img/mutton-malvani.jpg'},
-{id:410,cat:'Mutton Special',name:'मटण हंडी (Mutton Handi)',desc:'Traditional handi-style mutton curry',price:'₹600/840',tags:['Mutton','Handi'],img:'img/mutton-handi.jpg'},
-{id:411,cat:'Mutton Special',name:'चिकन हैदराबादी (Chicken Hyderabadi)',desc:'Spicy Hyderabadi-style chicken curry',price:'₹600/840',tags:['Chicken','Hyderabadi'],img:'img/chicken-hyderabadi.jpg'},
-{id:412,cat:'Mutton Special',name:'मटण रानमसाला (Mutton Ranmasala)',desc:'Rich and spicy mutton curry',price:'₹270/390',tags:['Mutton','Spicy'],img:'img/mutton-ranmasala.jpg'},
-{id:413,cat:'Mutton Special',name:'मटण मसाला (Mutton Masala)',desc:'Classic mutton masala curry',price:'₹250',tags:['Mutton','Masala'],img:'img/mutton-masala.jpg'},
-{id:414,cat:'Mutton Special',name:'मटण फ्राय (Mutton Fry)',desc:'Crispy fried mutton pieces',price:'₹280',tags:['Mutton','Fried'],img:'img/mutton-fry.jpg'},
-{id:415,cat:'Mutton Special',name:'मटण कोल्हापुरी (Mutton Kolhapuri)',desc:'Hot and spicy Kolhapuri-style mutton',price:'₹300',tags:['Mutton','Spicy'],img:'img/mutton-kolhapuri.jpg'},
-{id:416,cat:'Mutton Special',name:'अंडा मसाला (Egg Masala)',desc:'Spicy egg masala curry',price:'₹90',tags:['Egg','Masala'],img:'img/egg-masala.jpg'},
-{id:417,cat:'Mutton Special',name:'अंडा करी (Egg Curry)',desc:'Eggs cooked in spicy gravy',price:'₹90',tags:['Egg','Curry'],img:'img/egg-curry.jpg'},
-{id:418,cat:'Mutton Special',name:'अंडा मखखनवाला (Egg Makhaniwala)',desc:'Eggs in buttery makhani sauce',price:'₹120',tags:['Egg','Creamy'],img:'img/egg-makhaniwala.jpg'},
 
-  {"id":1,"cat":"Extra","name":"बिसलेरी","desc":"Packaged drinking water","price":"₹20","tags":["Water","Bottle"],"img":"img/bisleri.jpg"},
-  {"id":2,"cat":"Extra","name":"तांबडा रस्सा वाटी","desc":"Spicy red curry bowl","price":"₹20","tags":["Spicy","Curry"],"img":"img/tambda-rassa.jpg"},
-  {"id":3,"cat":"Extra","name":"पांढरा रस्सा वाटी","desc":"Mild white curry bowl","price":"₹20","tags":["Mild","Curry"],"img":"img/pandhra-rassa.jpg"},
-  {"id":4,"cat":"Extra","name":"सोलकढी","desc":"Konkani drink made with coconut milk & kokum","price":"₹20","tags":["Drink","Kokum"],"img":"img/solkadhi.jpg"},
+// Mutton Special (मटन स्पेशल)
+{id:601,cat:'Mutton Special',name:'मटन अफगानी (Mutton Afghani)',desc:'Creamy Afghani-style mutton',price:'₹320',tags:['Mutton','Creamy'],img:'img/mutton-afghani.jpg'},
+{id:602,cat:'Mutton Special',name:'मटन लाजवाब (Mutton Lajawab)',desc:'Delicious mutton preparation',price:'₹320',tags:['Mutton','Special'],img:'img/mutton-lajawab.jpg'},
+{id:603,cat:'Mutton Special',name:'मटन शाही (Mutton Shahi)',desc:'Royal mutton curry',price:'₹320',tags:['Mutton','Royal'],img:'img/mutton-shahi.jpg'},
+{id:604,cat:'Mutton Special',name:'मटन पसंदा (Mutton Pasanda)',desc:'Mutton stuffed with dry fruits',price:'₹340',tags:['Mutton','Stuffed'],img:'img/mutton-pasanda.jpg'},
+{id:605,cat:'Mutton Special',name:'मटन हरा भरा (Mutton Hara Bhara)',desc:'Green mutton preparation',price:'₹320',tags:['Mutton','Green'],img:'img/mutton-hara-bhara.jpg'},
+{id:606,cat:'Mutton Special',name:'मटन लहसुनी (Mutton Lahasuni)',desc:'Garlic-flavored mutton',price:'₹320',tags:['Mutton','Garlic'],img:'img/mutton-lahasuni.jpg'},
+{id:607,cat:'Mutton Special',name:'मटन कश्मीरी (Mutton Kashmiri)',desc:'Kashmiri-style mutton',price:'₹320',tags:['Mutton','Kashmiri'],img:'img/mutton-kashmiri.jpg'},
+{id:608,cat:'Mutton Special',name:'मटन मखनी (Mutton Makhani)',desc:'Mutton in rich butter gravy',price:'₹320',tags:['Mutton','Butter'],img:'img/mutton-makhani.jpg'},
+{id:609,cat:'Mutton Special',name:'मटन हवाई (Mutton Hawai)',desc:'Pineapple-flavored mutton',price:'₹320',tags:['Mutton','Pineapple'],img:'img/mutton-hawai.jpg'},
+{id:610,cat:'Mutton Special',name:'मटन बादामी (Mutton Badami)',desc:'Mutton in almond gravy',price:'₹340',tags:['Mutton','Almond'],img:'img/mutton-badami.jpg'},
+{id:611,cat:'Mutton Special',name:'मटन कोल्हापुरी (Mutton Kolhapuri)',desc:'Spicy Kolhapuri-style mutton',price:'₹320',tags:['Mutton','Spicy'],img:'img/mutton-kolhapuri.jpg'},
+{id:612,cat:'Mutton Special',name:'मटन हंदी (Mutton Handi)',desc:'Mutton cooked in handi style',price:'₹320',tags:['Mutton','Handi'],img:'img/mutton-handi.jpg'},
+{id:613,cat:'Mutton Special',name:'मटन कुरमा (Mutton Kurma)',desc:'Mutton in creamy korma gravy',price:'₹320',tags:['Mutton','Creamy'],img:'img/mutton-kurma.jpg'},
+{id:614,cat:'Mutton Special',name:'मटन जलफ्रेजी (Mutton Jalfrezi)',desc:'Mutton in jalfrezi style',price:'₹320',tags:['Mutton','Jalfrezi'],img:'img/mutton-jalfrezi.jpg'},
+{id:615,cat:'Mutton Special',name:'मटन दोपियाजा (Mutton Do Piaza)',desc:'Mutton with double onions',price:'₹320',tags:['Mutton','Onion'],img:'img/mutton-dopiaza.jpg'},
+{id:616,cat:'Mutton Special',name:'मटन मसाला (Mutton Masala)',desc:'Mutton in spicy gravy',price:'₹320',tags:['Mutton','Spicy'],img:'img/mutton-masala.jpg'},
+{id:617,cat:'Mutton Special',name:'मटन बटर मसाला (Mutton Butter Masala)',desc:'Mutton in butter gravy',price:'₹320',tags:['Mutton','Butter'],img:'img/mutton-butter-masala.jpg'},
+{id:618,cat:'Mutton Special',name:'मटन कडाई (Mutton Kadai)',desc:'Mutton in kadai style',price:'₹320',tags:['Mutton','Kadai'],img:'img/mutton-kadai.jpg'},
+{id:619,cat:'Mutton Special',name:'मटन भुर्जी (Mutton Bhurji)',desc:'Scrambled mutton',price:'₹280',tags:['Mutton','Scrambled'],img:'img/mutton-bhurji.jpg'},
+{id:620,cat:'Mutton Special',name:'मटन पालक (Mutton Palak)',desc:'Mutton in spinach gravy',price:'₹320',tags:['Mutton','Palak'],img:'img/mutton-palak.jpg'},
+{id:621,cat:'Mutton Special',name:'मटन हंदी स्पेशल (Mutton Handi Special)',desc:'Special handi-style mutton',price:'₹340',tags:['Mutton','Handi'],img:'img/mutton-handi-special.jpg'},
+{id:622,cat:'Mutton Special',name:'मटन कोल्हापुरी स्पेशल (Mutton Kolhapuri Special)',desc:'Special spicy Kolhapuri mutton',price:'₹340',tags:['Mutton','Spicy'],img:'img/mutton-kolhapuri-special.jpg'},
+{id:623,cat:'Mutton Special',name:'मटन कडाई स्पेशल (Mutton Kadai Special)',desc:'Special kadai-style mutton',price:'₹340',tags:['Mutton','Kadai'],img:'img/mutton-kadai-special.jpg'},
+{id:624,cat:'Mutton Special',name:'मटन जलफ्रेजी स्पेशल (Mutton Jalfrezi Special)',desc:'Special jalfrezi-style mutton',price:'₹340',tags:['Mutton','Jalfrezi'],img:'img/mutton-jalfrezi-special.jpg'},
+{id:625,cat:'Mutton Special',name:'मटन दोपियाजा स्पेशल (Mutton Do Piaza Special)',desc:'Special double onion mutton',price:'₹320',tags:['Mutton','Onion'],img:'img/mutton-dopiaza-special.jpg'},
+{id:626,cat:'Mutton Special',name:'मटन मसाला स्पेशल (Mutton Masala Special)',desc:'Special spicy mutton curry',price:'₹320',tags:['Mutton','Spicy'],img:'img/mutton-masala-special.jpg'},
+{id:627,cat:'Mutton Special',name:'मटन बटर मसाला स्पेशल (Mutton Butter Masala Special)',desc:'Special butter mutton curry',price:'₹340',tags:['Mutton','Butter'],img:'img/mutton-butter-masala-special.jpg'},
+{id:628,cat:'Mutton Special',name:'मटन कुरमा स्पेशल (Mutton Kurma Special)',desc:'Special creamy mutton korma',price:'₹320',tags:['Mutton','Creamy'],img:'img/mutton-kurma-special.jpg'},
+{id:629,cat:'Mutton Special',name:'मटन भुर्जी स्पेशल (Mutton Bhurji Special)',desc:'Special scrambled mutton',price:'₹300',tags:['Mutton','Scrambled'],img:'img/mutton-bhurji-special.jpg'},
+{id:630,cat:'Mutton Special',name:'मटन पालक स्पेशल (Mutton Palak Special)',desc:'Special mutton in spinach gravy',price:'₹340',tags:['Mutton','Palak'],img:'img/mutton-palak-special.jpg'},
 
-  {"id":5,"cat":"रोटी","name":"प्लेन रोटी","desc":"Plain wheat roti","price":"₹15","tags":["Roti","Plain"],"img":"img/plain-roti.jpg"},
-  {"id":6,"cat":"रोटी","name":"बटर रोटी","desc":"Butter-coated wheat roti","price":"₹20","tags":["Roti","Butter"],"img":"img/butter-roti.jpg"},
-  {"id":7,"cat":"रोटी","name":"प्लेन नान","desc":"Soft plain naan","price":"₹30","tags":["Naan","Plain"],"img":"img/plain-naan.jpg"},
-  {"id":8,"cat":"रोटी","name":"बटर नान","desc":"Butter naan","price":"₹40","tags":["Naan","Butter"],"img":"img/butter-naan.jpg"},
-  {"id":9,"cat":"रोटी","name":"प्लेन पराठा","desc":"Plain paratha","price":"₹30","tags":["Paratha","Plain"],"img":"img/plain-paratha.jpg"},
-  {"id":0,"cat":"रोटी","name":"बटर पराठा","desc":"Butter paratha","price":"₹40","tags":["Paratha","Butter"],"img":"img/butter-paratha.jpg"},
-  {"id":10,"cat":"रोटी","name":"भाकरी (बाजरी, ज्वारी)","desc":"Traditional bhakri made with bajra or jowar","price":"₹30","tags":["Bhakri","Traditional"],"img":"img/bhakri.jpg"},
 
-  {"id":12,"cat":"ऑर्डर प्रमाण","name":"चिकन दम बिर्याणी","desc":"Chicken dum biryani full portion","price":"₹600","tags":["Biryani","Chicken"],"img":"img/chicken-dum-biryani.jpg"},
-  {"id":13,"cat":"ऑर्डर प्रमाण","name":"मटन दम बिर्याणी","desc":"Mutton dum biryani full portion","price":"₹1250","tags":["Biryani","Mutton"],"img":"img/mutton-dum-biryani.jpg"},
-  {"id":14,"cat":"ऑर्डर प्रमाण","name":"चिकन तयार करून","desc":"Prepared chicken curry","price":"₹300","tags":["Chicken","Curry"],"img":"img/chicken-tayaar-karun.jpg"},
-  {"id":15,"cat":"ऑर्डर प्रमाण","name":"देशी चिकन तयार करून","desc":"Prepared country chicken curry","price":"₹450","tags":["Desi","Chicken"],"img":"img/desi-chicken-tayaar-karun.jpg"},
-  {"id":16,"cat":"ऑर्डर प्रमाण","name":"मटन तयार करून","desc":"Prepared mutton curry","price":"₹600","tags":["Mutton","Curry"],"img":"img/mutton-tayaar-karun.jpg"},
+// Extra (अतिरिक्त)
+{id:701,cat:'Extra',name:'सलाद (Salad)',desc:'Fresh vegetable salad',price:'₹40',tags:['Salad','Fresh'],img:'img/salad.jpg'},
+{id:702,cat:'Extra',name:'रायता (Raita)',desc:'Yogurt with vegetables',price:'₹40',tags:['Raita','Yogurt'],img:'img/raita.jpg'},
+{id:703,cat:'Extra',name:'पापड (Papad)',desc:'Crispy papad',price:'₹20',tags:['Papad','Crispy'],img:'img/papad.jpg'},
+{id:704,cat:'Extra',name:'अचार (Achar)',desc:'Indian pickle',price:'₹20',tags:['Pickle','Spicy'],img:'img/achar.jpg'},
+{id:705,cat:'Extra',name:'चटनी (Chutney)',desc:'Fresh chutney',price:'₹20',tags:['Chutney','Fresh'],img:'img/chutney.jpg'},
+{id:706,cat:'Extra',name:'सॉस (Sauce)',desc:'Tomato sauce',price:'₹10',tags:['Sauce','Tomato'],img:'img/sauce.jpg'},
+{id:707,cat:'Extra',name:'चिली सॉस (Chili Sauce)',desc:'Spicy chili sauce',price:'₹10',tags:['Sauce','Spicy'],img:'img/chili-sauce.jpg'},
+{id:708,cat:'Extra',name:'गरम मसाला (Garam Masala)',desc:'Hot spice mix',price:'₹10',tags:['Spice','Hot'],img:'img/garam-masala.jpg'},
+{id:709,cat:'Extra',name:'नींबू (Lemon)',desc:'Fresh lemon wedge',price:'₹5',tags:['Lemon','Fresh'],img:'img/lemon.jpg'},
+{id:710,cat:'Extra',name:'अदरक (Ginger)',desc:'Fresh ginger',price:'₹10',tags:['Ginger','Fresh'],img:'img/ginger.jpg'},
+{id:711,cat:'Extra',name:'लहसुन (Garlic)',desc:'Fresh garlic',price:'₹10',tags:['Garlic','Fresh'],img:'img/garlic.jpg'},
+{id:712,cat:'Extra',name:'हरा धनिया (Green Coriander)',desc:'Fresh coriander leaves',price:'₹10',tags:['Coriander','Fresh'],img:'img/green-coriander.jpg'},
+{id:713,cat:'Extra',name:'पुदीना (Mint)',desc:'Fresh mint leaves',price:'₹10',tags:['Mint','Fresh'],img:'img/mint.jpg'},
+{id:714,cat:'Extra',name:'हरी मिर्च (Green Chili)',desc:'Fresh green chilies',price:'₹5',tags:['Chili','Spicy'],img:'img/green-chili.jpg'},
+{id:715,cat:'Extra',name:'लाल मिर्च (Red Chili)',desc:'Red chili powder',price:'₹5',tags:['Chili','Spicy'],img:'img/red-chili.jpg'},
 
-  {"id":17,"cat":"बिर्याणी","name":"व्हेज बिर्याणी","desc":"Vegetable biryani","price":"₹140","tags":["Veg","Biryani"],"img":"img/veg-biryani.jpg"},
-  {"id":18,"cat":"बिर्याणी","name":"चिकन बिर्याणी","desc":"Chicken biryani","price":"₹150","tags":["Chicken","Biryani"],"img":"img/chicken-biryani.jpg"},
-  {"id":19,"cat":"बिर्याणी","name":"मटन बिर्याणी","desc":"Mutton biryani","price":"₹200","tags":["Mutton","Biryani"],"img":"img/mutton-biryani.jpg"},
-  {"id":20,"cat":"बिर्याणी","name":"अंडा बिर्याणी","desc":"Egg biryani","price":"₹120","tags":["Egg","Biryani"],"img":"img/egg-biryani.jpg"},
 
-  {"id":21,"cat":"राईस","name":"प्लेन राईस","desc":"Plain steamed rice","price":"₹60/80","tags":["Rice","Plain"],"img":"img/plain-rice.jpg"},
-  {"id":22,"cat":"राईस","name":"जिरा राईस","desc":"Cumin-flavored rice","price":"₹70/90","tags":["Rice","Jeera"],"img":"img/jeera-rice.jpg"},
-  {"id":23,"cat":"राईस","name":"मसाला राईस","desc":"Spicy masala rice","price":"₹100","tags":["Rice","Spicy"],"img":"img/masala-rice.jpg"},
+// Roti (रोटी)
+{id:801,cat:'रोटी',name:'तंदुरी रोटी (Tandoori Roti)',desc:'Tandoor-baked whole wheat bread',price:'₹20',tags:['Roti','Tandoori'],img:'img/tandoori-roti.jpg'},
+{id:802,cat:'रोटी',name:'मिस्सी रोटी (Missi Roti)',desc:'Gram flour bread',price:'₹25',tags:['Roti','Gram Flour'],img:'img/missi-roti.jpg'},
+{id:803,cat:'रोटी',name:'रुमाली रोटी (Rumali Roti)',desc:'Thin handkerchief bread',price:'₹30',tags:['Roti','Thin'],img:'img/rumali-roti.jpg'},
+{id:804,cat:'रोटी',name:'नान (Naan)',desc:'Leavened white flour bread',price:'₹30',tags:['Naan','Leavened'],img:'img/naan.jpg'},
+{id:805,cat:'रोटी',name:'बटर नान (Butter Naan)',desc:'Buttered naan',price:'₹40',tags:['Naan','Butter'],img:'img/butter-naan.jpg'},
+{id:806,cat:'रोटी',name:'गार्लिक नान (Garlic Naan)',desc:'Garlic-flavored naan',price:'₹50',tags:['Naan','Garlic'],img:'img/garlic-naan.jpg'},
+{id:807,cat:'रोटी',name:'चीज़ नान (Cheese Naan)',desc:'Cheese-stuffed naan',price:'₹60',tags:['Naan','Cheese'],img:'img/cheese-naan.jpg'},
+{id:808,cat:'रोटी',name:'कश्मीरी नान (Kashmiri Naan)',desc:'Sweet Kashmiri naan',price:'₹60',tags:['Naan','Sweet'],img:'img/kashmiri-naan.jpg'},
+{id:809,cat:'रोटी',name:'पुदीना नान (Pudina Naan)',desc:'Mint-flavored naan',price:'₹50',tags:['Naan','Mint'],img:'img/pudina-naan.jpg'},
+{id:810,cat:'रोटी',name:'अलू नान (Aloo Naan)',desc:'Potato-stuffed naan',price:'₹50',tags:['Naan','Potato'],img:'img/aloo-naan.jpg'},
+{id:811,cat:'रोटी',name:'पनीर नान (Paneer Naan)',desc:'Paneer-stuffed naan',price:'₹60',tags:['Naan','Paneer'],img:'img/paneer-naan.jpg'},
+{id:812,cat:'रोटी',name:'कुल्चा (Kulcha)',desc:'Leavened bread',price:'₹30',tags:['Kulcha','Leavened'],img:'img/kulcha.jpg'},
+{id:813,cat:'रोटी',name:'अलू कुल्चा (Aloo Kulcha)',desc:'Potato-stuffed kulcha',price:'₹40',tags:['Kulcha','Potato'],img:'img/aloo-kulcha.jpg'},
+{id:814,cat:'रोटी',name:'पनीर कुल्चा (Paneer Kulcha)',desc:'Paneer-stuffed kulcha',price:'₹50',tags:['Kulcha','Paneer'],img:'img/paneer-kulcha.jpg'},
+{id:815,cat:'रोटी',name:'पराठा (Paratha)',desc:'Layered flatbread',price:'₹30',tags:['Paratha','Layered'],img:'img/paratha.jpg'},
+{id:816,cat:'रोटी',name:'अलू पराठा (Aloo Paratha)',desc:'Potato-stuffed paratha',price:'₹40',tags:['Paratha','Potato'],img:'img/aloo-paratha.jpg'},
+{id:817,cat:'रोटी',name:'गोभी पराठा (Gobhi Paratha)',desc:'Cauliflower-stuffed paratha',price:'₹40',tags:['Paratha','Cauliflower'],img:'img/gobhi-paratha.jpg'},
+{id:818,cat:'रोटी',name:'मूली पराठा (Mooli Paratha)',desc:'Radish-stuffed paratha',price:'₹40',tags:['Paratha','Radish'],img:'img/mooli-paratha.jpg'},
+{id:819,cat:'रोटी',name:'पनीर पराठा (Paneer Paratha)',desc:'Paneer-stuffed paratha',price:'₹50',tags:['Paratha','Paneer'],img:'img/paneer-paratha.jpg'},
+{id:820,cat:'रोटी',name:'मेथी पराठा (Methi Paratha)',desc:'Fenugreek-flavored paratha',price:'₹40',tags:['Paratha','Fenugreek'],img:'img/methi-paratha.jpg'},
+{id:821,cat:'रोटी',name:'बटर पराठा (Butter Paratha)',desc:'Buttered paratha',price:'₹40',tags:['Paratha','Butter'],img:'img/butter-paratha.jpg'},
+{id:822,cat:'रोटी',name:'फुलका (Phulka)',desc:'Puffed whole wheat bread',price:'₹15',tags:['Phulka','Puffed'],img:'img/phulka.jpg'},
+{id:823,cat:'रोटी',name:'भकारी (Bhakhari)',desc:'Thick Gujarati bread',price:'₹25',tags:['Bhakhari','Thick'],img:'img/bhakhari.jpg'},
+{id:824,cat:'रोटी',name:'पुरी (Puri)',desc:'Deep-fried puffed bread',price:'₹30',tags:['Puri','Fried'],img:'img/puri.jpg'},
+{id:825,cat:'रोटी',name:'बाजरा रोटी (Bajra Roti)',desc:'Pearl millet bread',price:'₹25',tags:['Roti','Millet'],img:'img/bajra-roti.jpg'},
+{id:826,cat:'रोटी',name:'ज्वार रोटी (Jowar Roti)',desc:'Sorghum bread',price:'₹25',tags:['Roti','Sorghum'],img:'img/jowar-roti.jpg'},
+{id:827,cat:'रोटी',name:'मक्का रोटी (Makka Roti)',desc:'Cornbread',price:'₹25',tags:['Roti','Corn'],img:'img/makka-roti.jpg'},
 
-  {"id":324,"cat":"थाळी (अनलिमिटेड)","name":"मटण स्पेशल","desc":"Special mutton thali with mutton fry, gravy mutton, bhajji, solkadhi, egg curry, tambda rassa, pandhra rassa, roti or bhakri, and rice","price":"₹300","tags":["Thali","Mutton","Unlimited"],"img":"img/mutton-special-thali.jpg"},
-  {"id":325,"cat":"थाळी (अनलिमिटेड)","name":"मटण थाळी","desc":"Mutton thali with egg curry, tambda rassa, pandhra rassa, solkadhi, roti or bhakri, and rice","price":"₹250","tags":["Thali","Mutton"],"img":"img/mutton-thali.jpg"},
-  {"id":326,"cat":"थाळी (अनलिमिटेड)","name":"चिकन स्पेशल","desc":"Special chicken thali with chicken fry, gravy chicken, leg piece, solkadhi, egg curry, tambda rassa, pandhra rassa, roti or bhakri, and rice","price":"₹220","tags":["Thali","Chicken","Special"],"img":"img/chicken-special-thali.jpg"},
-  {"id":327,"cat":"थाळी (अनलिमिटेड)","name":"चिकन थाळी","desc":"Chicken thali with egg curry, tambda rassa, pandhra rassa, solkadhi, roti or bhakri, and rice","price":"₹180","tags":["Thali","Chicken"],"img":"img/chicken-thali.jpg"},
-  {"id":328,"cat":"थाळी (अनलिमिटेड)","name":"अंडा मसाला","desc":"Egg masala thali with tambda rassa, pandhra rassa, solkadhi, roti, and rice","price":"₹130","tags":["Thali","Egg","Masala"],"img":"img/egg-masala-thali.jpg"},
-  {"id":329,"cat":"थाळी (अनलिमिटेड)","name":"अंडा करी","desc":"Egg curry thali with tambda rassa, pandhra rassa, solkadhi, roti, and rice","price":"₹120","tags":["Thali","Egg","Curry"],"img":"img/egg-curry-thali.jpg"},
-];
+
+// Rice (राईस)
+{id:901,cat:'राईस',name:'जीरा राईस (Jeera Rice)',desc:'Cumin-flavored rice',price:'₹120',tags:['Rice','Cumin'],img:'img/jeera-rice.jpg'},
+{id:902,cat:'राईस',name:'पुलाव (Pulao)',desc:'Vegetable pulao',price:'₹140',tags:['Rice','Vegetable'],img:'img/pulao.jpg'},
+{id:903,cat:'राईस',name:'वेज पुलाव (Veg Pulao)',desc:'Vegetable pulao',price:'₹140',tags:['Rice','Vegetable'],img:'img/veg-pulao.jpg'},
+{id:904,cat:'राईस',name:'पनीर पुलाव (Paneer Pulao)',desc:'Paneer pulao',price:'₹160',tags:['Rice','Paneer'],img:'img/paneer-pulao.jpg'},
+{id:905,cat:'राईस',name:'मटर पुलाव (Matar Pulao)',desc:'Peas pulao',price:'₹140',tags:['Rice','Peas'],img:'img/matar-pulao.jpg'},
+{id:906,cat:'राईस',name:'मशरूम पुलाव (Mushroom Pulao)',desc:'Mushroom pulao',price:'₹160',tags:['Rice','Mushroom'],img:'img/mushroom-pulao.jpg'},
+{id:907,cat:'राईस',name:'चिकन पुलाव (Chicken Pulao)',desc:'Chicken pulao',price:'₹180',tags:['Rice','Chicken'],img:'img/chicken-pulao.jpg'},
+{id:908,cat:'राईस',name:'मटन पुलाव (Mutton Pulao)',desc:'Mutton pulao',price:'₹200',tags:['Rice','Mutton'],img:'img/mutton-pulao.jpg'},
+{id:909,cat:'राईस',name:'फ्राइड राईस (Fried Rice)',desc:'Chinese-style fried rice',price:'₹140',tags:['Rice','Fried'],img:'img/fried-rice.jpg'},
+{id:910,cat:'राईस',name:'वेज फ्राइड राईस (Veg Fried Rice)',desc:'Vegetable fried rice',price:'₹140',tags:['Rice','Vegetable'],img:'img/veg-fried-rice.jpg'},
+{id:911,cat:'राईस',name:'एग फ्राइड राईस (Egg Fried Rice)',desc:'Egg fried rice',price:'₹150',tags:['Rice','Egg'],img:'img/egg-fried-rice.jpg'},
+{id:912,cat:'राईस',name:'चिकन फ्राइड राईस (Chicken Fried Rice)',desc:'Chicken fried rice',price:'₹170',tags:['Rice','Chicken'],img:'img/chicken-fried-rice.jpg'},
+{id:913,cat:'राईस',name:'मटन फ्राइड राईस (Mutton Fried Rice)',desc:'Mutton fried rice',price:'₹190',tags:['Rice','Mutton'],img:'img/mutton-fried-rice.jpg'},
+{id:914,cat:'राईस',name:'स्पेशल फ्राइड राईस (Special Fried Rice)',desc:'Special fried rice',price:'₹160',tags:['Rice','Special'],img:'img/special-fried-rice.jpg'},
+{id:915,cat:'राईस',name:'सी फूड फ्राइड राईस (Seafood Fried Rice)',desc:'Seafood fried rice',price:'₹200',tags:['Rice','Seafood'],img:'img/seafood-fried-rice.jpg'},
+{id:916,cat:'राईस',name:'पीनट फ्राइड राईस (Peanut Fried Rice)',desc:'Peanut fried rice',price:'₹150',tags:['Rice','Peanut'],img:'img/peanut-fried-rice.jpg'},
+{id:917,cat:'राईस',name:'गार्लिक राईस (Garlic Rice)',desc:'Garlic-flavored rice',price:'₹130',tags:['Rice','Garlic'],img:'img/garlic-rice.jpg'},
+{id:918,cat:'राईस',name:'लेमन राईस (Lemon Rice)',desc:'Lemon-flavored rice',price:'₹120',tags:['Rice','Lemon'],img:'img/lemon-rice.jpg'},
+{id:919,cat:'राईस',name:'टमाटर राईस (Tomato Rice)',desc:'Tomato-flavored rice',price:'₹130',tags:['Rice','Tomato'],img:'img/tomato-rice.jpg'},
+{id:920,cat:'राईस',name:'कर्द राईस (Curd Rice)',desc:'Yogurt rice',price:'₹100',tags:['Rice','Yogurt'],img:'img/curd-rice.jpg'},
+{id:921,cat:'राईस',name:'सांभर राईस (Sambar Rice)',desc:'Sambar rice',price:'₹120',tags:['Rice','Sambar'],img:'img/sambar-rice.jpg'},
+{id:922,cat:'राईस',name:'रसां राईस (Rasam Rice)',desc:'Rasam rice',price:'₹110',tags:['Rice','Rasam'],img:'img/rasam-rice.jpg'},
+{id:923,cat:'राईस',name:'बिरयाणी राईस (Biryani Rice)',desc:'Biryani rice',price:'₹150',tags:['Rice','Biryani'],img:'img/biryani-rice.jpg'},
+{id:924,cat:'राईस',name:'वेज बिरयाणी राईस (Veg Biryani Rice)',desc:'Vegetable biryani rice',price:'₹150',tags:['Rice','Vegetable'],img:'img/veg-biryani-rice.jpg'},
+{id:925,cat:'राईस',name:'पनीर बिरयाणी राईस (Paneer Biryani Rice)',desc:'Paneer biryani rice',price:'₹170',tags:['Rice','Paneer'],img:'img/paneer-biryani-rice.jpg'},
+{id:926,cat:'राईस',name:'चिकन बिरयाणी राईस (Chicken Biryani Rice)',desc:'Chicken biryani rice',price:'₹190',tags:['Rice','Chicken'],img:'img/chicken-biryani-rice.jpg'},
+{id:927,cat:'राईस',name:'मटन बिरयाणी राईस (Mutton Biryani Rice)',desc:'Mutton biryani rice',price:'₹210',tags:['Rice','Mutton'],img:'img/mutton-biryani-rice.jpg'},
+{id:928,cat:'राईस',name:'प्रॉन बिरयाणी राईस (Prawn Biryani Rice)',desc:'Prawn biryani rice',price:'₹220',tags:['Rice','Prawn'],img:'img/prawn-biryani-rice.jpg'},
+{id:929,cat:'राईस',name:'फिश बिरयाणी राईस (Fish Biryani Rice)',desc:'Fish biryani rice',price:'₹210',tags:['Rice','Fish'],img:'img/fish-biryani-rice.jpg'},
+{id:930,cat:'राईस',name:'एग बिरयाणी राईस (Egg Biryani Rice)',desc:'Egg biryani rice',price:'₹170',tags:['Rice','Egg'],img:'img/egg-biryani-rice.jpg'},
+{id:931,cat:'राईस',name:'हाइदराबादी बिरयाणी राईस (Hyderabadi Biryani Rice)',desc:'Hyderabadi biryani rice',price:'₹200',tags:['Rice','Hyderabadi'],img:'img/hyderabadi-biryani-rice.jpg'},
+{id:932,cat:'राईस',name:'लखनऊ बिरयाणी राईस (Lucknowi Biryani Rice)',desc:'Lucknowi biryani rice',price:'₹200',tags:['Rice','Lucknowi'],img:'img/lucknowi-biryani-rice.jpg'},
+{id:933,cat:'राईस',name:'सिंधी बिरयाणी राईस (Sindhi Biryani Rice)',desc:'Sindhi biryani rice',price:'₹190',tags:['Rice','Sindhi'],img:'img/sindhi-biryani-rice.jpg'},
+{id:934,cat:'राईस',name:'मलाबार बिरयाणी राईस (Malabar Biryani Rice)',desc:'Malabar biryani rice',price:'₹190',tags:['Rice','Malabar'],img:'img/malabar-biryani-rice.jpg'},
+{id:935,cat:'राईस',name:'थालीपीठ (Thalipeeth)',desc:'Multi-grain pancake',price:'₹40',tags:['Thalipeeth','Multi-grain'],img:'img/thalipeeth.jpg'},
+{id:936,cat:'राईस',name:'पोहा (Poha)',desc:'Flattened rice',price:'₹40',tags:['Poha','Flattened Rice'],img:'img/poha.jpg'},
+{id:937,cat:'राईस',name:'सबूदाना (Sabudana)',desc:'Tapioca pearls',price:'₹50',tags:['Sabudana','Tapioca'],img:'img/sabudana.jpg'},
+{id:938,cat:'राईस',name:'उपमा (Upma)',desc:'Semolina dish',price:'₹40',tags:['Upma','Semolina'],img:'img/upma.jpg'},
+{id:939,cat:'राईस',name:'वड़ा (Vada)',desc:'Savory donut',price:'₹30',tags:['Vada','Savory'],img:'img/vada.jpg'},
+{id:940,cat:'राईस',name:'इडली (Idli)',desc:'Steamed rice cake',price:'₹40',tags:['Idli','Steamed'],img:'img/idli.jpg'},
+{id:941,cat:'राईस',name:'दोसा (Dosa)',desc:'Fermented crepe',price:'₹50',tags:['Dosa','Fermented'],img:'img/dosa.jpg'},
+{id:942,cat:'राईस',name:'मसाला दोसा (Masala Dosa)',desc:'Dosa with potato filling',price:'₹70',tags:['Dosa','Potato'],img:'img/masala-dosa.jpg'},
+{id:943,cat:'राईस',name:'रवा दोसा (Rava Dosa)',desc:'Semolina dosa',price:'₹60',tags:['Dosa','Semolina'],img:'img/rava-dosa.jpg'},
+{id:944,cat:'राईस',name:'नेवर दोसा (Neer Dosa)',desc:'Water dosa',price:'₹50',tags:['Dosa','Water'],img:'img/neer-dosa.jpg'},
+{id:945,cat:'राईस',name:'सेत दोसा (Set Dosa)',desc:'Set of mini dosas',price:'₹60',tags:['Dosa','Mini'],img:'img/set-dosa.jpg'},
+{id:946,cat:'राईस',name:'अप्पम (Appam)',desc:'Bowl-shaped pancake',price:'₹50',tags:['Appam','Pancake'],img:'img/appam.jpg'},
+{id:947,cat:'राईस',name:'पुट्टु (Puttu)',desc:'Cylindrical rice cake',price:'₹50',tags:['Puttu','Rice Cake'],img:'img/puttu.jpg'},
+{id:948,cat:'राईस',name:'इडियप्पम (Idiyappam)',desc:'String hoppers',price:'₹50',tags:['Idiyappam','String Hoppers'],img:'img/idiyappam.jpg'},
+{id:949,cat:'राईस',name:'पंचरत्न राईस (Panchratna Rice)',desc:'Five-gem rice',price:'₹160',tags:['Rice','Five-gem'],img:'img/panchratna-rice.jpg'},
+{id:950,cat:'राईस',name:'किशमिश राईस (Kishmish Rice)',desc:'Raisin rice',price:'₹140',tags:['Rice','Raisin'],img:'img/kishmish-rice.jpg'},
+
+
+// Biryani (बिर्याणी)
+{id:1001,cat:'बिर्याणी',name:'वेज बिरयाणी (Veg Biryani)',desc:'Vegetable biryani',price:'₹180',tags:['Biryani','Vegetable'],img:'img/veg-biryani.jpg'},
+{id:1002,cat:'बिर्याणी',name:'पनीर बिरयाणी (Paneer Biryani)',desc:'Paneer biryani',price:'₹200',tags:['Biryani','Paneer'],img:'img/paneer-biryani.jpg'},
+{id:1003,cat:'बिर्याणी',name:'मटर बिरयाणी (Matar Biryani)',desc:'Peas biryani',price:'₹180',tags:['Biryani','Peas'],img:'img/matar-biryani.jpg'},
+{id:1004,cat:'बिर्याणी',name:'मशरूम बिरयाणी (Mushroom Biryani)',desc:'Mushroom biryani',price:'₹200',tags:['Biryani','Mushroom'],img:'img/mushroom-biryani.jpg'},
+{id:1005,cat:'बिर्याणी',name:'चिकन बिरयाणी (Chicken Biryani)',desc:'Chicken biryani',price:'₹220',tags:['Biryani','Chicken'],img:'img/chicken-biryani.jpg'},
+{id:1006,cat:'बिर्याणी',name:'मटन बिरयाणी (Mutton Biryani)',desc:'Mutton biryani',price:'₹240',tags:['Biryani','Mutton'],img:'img/mutton-biryani.jpg'},
+{id:1007,cat:'बिर्याणी',name:'प्रॉन बिरयाणी (Prawn Biryani)',desc:'Prawn biryani',price:'₹250',tags:['Biryani','Prawn'],img:'img/prawn-biryani.jpg'},
+{id:1008,cat:'बिर्याणी',name:'फिश बिरयाणी (Fish Biryani)',desc:'Fish biryani',price:'₹240',tags:['Biryani','Fish'],img:'img/fish-biryani.jpg'},
+{id:1009,cat:'बिर्याणी',name:'एग बिरयाणी (Egg Biryani)',desc:'Egg biryani',price:'₹200',tags:['Biryani','Egg'],img:'img/egg-biryani.jpg'},
+{id:1010,cat:'बिर्याणी',name:'हाइदराबादी बिरयाणी (Hyderabadi Biryani)',desc:'Hyderabadi biryani',price:'₹240',tags:['Biryani','Hyderabadi'],img:'img/hyderabadi-biryani.jpg'},
+{id:1011,cat:'बिर्याणी',name:'लखनऊ बिरयाणी (Lucknowi Biryani)',desc:'Lucknowi biryani',price:'₹240',tags:['Biryani','Lucknowi'],img:'img/lucknowi-biryani.jpg'},
+{id:1012,cat:'बिर्याणी',name:'सिंधी बिरयाणी (Sindhi Biryani)',desc:'Sindhi biryani',price:'₹230',tags:['Biryani','Sindhi'],img:'img/sindhi-biryani.jpg'},
+{id:1013,cat:'बिर्याणी',name:'मलाबार बिरयाणी (Malabar Biryani)',desc:'Malabar biryani',price:'₹230',tags:['Biryani','Malabar'],img:'img/malabar-biryani.jpg'},
+{id:1014,cat:'बिर्याणी',name:'कोलकाता बिरयाणी (Kolkata Biryani)',desc:'Kolkata biryani',price:'₹220',tags:['Biryani','Kolkata'],img:'img/kolkata-biryani.jpg'},
+{id:1015,cat:'बिर्याणी',name:'थालास्सेरी बिरयाणी (Thalassery Biryani)',desc:'Thalassery biryani',price:'₹240',tags:['Biryani','Thalassery'],img:'img/thalassery-biryani.jpg'},
+{id:1016,cat:'बिर्याणी',name:'अम्बुर बिरयाणी (Ambur Biryani)',desc:'Ambur biryani',price:'₹230',tags:['Biryani','Ambur'],img:'img/ambur-biryani.jpg'},
+{id:1017,cat:'बिर्याणी',name:'दिंदीगुल बिरयाणी (Dindigul Biryani)',desc:'Dindigul biryani',price:'₹230',tags:['Biryani','Dindigul'],img:'img/dindigul-biryani.jpg'},
+{id:1018,cat:'बिर्याणी',name:'बोम्मई बिरयाणी (Bommai Biryani)',desc:'Bommai biryani',price:'₹240',tags:['Biryani','Bommai'],img:'img/bommai-biryani.jpg'},
+{id:1019,cat:'बिर्याणी',name:'कच्छी बिरयाणी (Kacchi Biryani)',desc:'Kacchi biryani',price:'₹250',tags:['Biryani','Kacchi'],img:'img/kacchi-biryani.jpg'},
+{id:1020,cat:'बिर्याणी',name:'पुक्की बिरयाणी (Pukki Biryani)',desc:'Pukki biryani',price:'₹240',tags:['Biryani','Pukki'],img:'img/pukki-biryani.jpg'},
+{id:1021,cat:'बिर्याणी',name:'तेहरी (Tehri)',desc:'Vegetable tehri',price:'₹160',tags:['Tehri','Vegetable'],img:'img/tehri.jpg'},
+{id:1022,cat:'बिर्याणी',name:'मटर पुलाव बिरयाणी (Matar Pulao Biryani)',desc:'Peas pulao biryani',price:'₹170',tags:['Biryani','Peas'],img:'img/matar-pulao-biryani.jpg'},
+{id:1023,cat:'बिर्याणी',name:'पनीर पुलाव बिरयाणी (Paneer Pulao Biryani)',desc:'Paneer pulao biryani',price:'₹190',tags:['Biryani','Paneer'],img:'img/paneer-pulao-biryani.jpg'},
+{id:1024,cat:'बिर्याणी',name:'चिकन पुलाव बिरयाणी (Chicken Pulao Biryani)',desc:'Chicken pulao biryani',price:'₹210',tags:['Biryani','Chicken'],img:'img/chicken-pulao-biryani.jpg'},
+{id:1025,cat:'बिर्याणी',name:'मटन पुलाव बिरयाणी (Mutton Pulao Biryani)',desc:'Mutton pulao biryani',price:'₹230',tags:['Biryani','Mutton'],img:'img/mutton-pulao-biryani.jpg'},
+{id:1026,cat:'बिर्याणी',name:'प्रॉन पुलाव बिरयाणी (Prawn Pulao Biryani)',desc:'Prawn pulao biryani',price:'₹240',tags:['Biryani','Prawn'],img:'img/prawn-pulao-biryani.jpg'},
+{id:1027,cat:'बिर्याणी',name:'फिश पुलाव बिरयाणी (Fish Pulao Biryani)',desc:'Fish pulao biryani',price:'₹230',tags:['Biryani','Fish'],img:'img/fish-pulao-biryani.jpg'},
+{id:1028,cat:'बिर्याणी',name:'एग पुलाव बिरयाणी (Egg Pulao Biryani)',desc:'Egg pulao biryani',price:'₹190',tags:['Biryani','Egg'],img:'img/egg-pulao-biryani.jpg'},
+{id:1029,cat:'बिर्याणी',name:'हाइदराबादी पुलाव बिरयाणी (Hyderabadi Pulao Biryani)',desc:'Hyderabadi pulao biryani',price:'₹230',tags:['Biryani','Hyderabadi'],img:'img/hyderabadi-pulao-biryani.jpg'},
+{id:1030,cat:'बिर्याणी',name:'लखनऊ पुलाव बिरयाणी (Lucknowi Pulao Biryani)',desc:'Lucknowi pulao biryani',price:'₹230',tags:['Biryani','Lucknowi'],img:'img/lucknowi-pulao-biryani.jpg'},
+
+
+// Thali (थाळी)
+{id:1101,cat:'थाळी (अनलिमिटेड)',name:'वेज थाळी (Veg Thali)',desc:'Unlimited vegetarian thali',price:'₹250',tags:['Thali','Unlimited'],img:'img/veg-thali.jpg'},
+{id:1102,cat:'थाळी (अनलिमिटेड)',name:'नॉन वेज थाळी (Non Veg Thali)',desc:'Unlimited non-vegetarian thali',price:'₹350',tags:['Thali','Unlimited'],img:'img/non-veg-thali.jpg'},
+{id:1103,cat:'थाळी (अनलिमिटेड)',name:'चिकन थाळी (Chicken Thali)',desc:'Unlimited chicken thali',price:'₹400',tags:['Thali','Unlimited'],img:'img/chicken-thali.jpg'},
+{id:1104,cat:'थाळी (अनलिमिटेड)',name:'मटन थाळी (Mutton Thali)',desc:'Unlimited mutton thali',price:'₹450',tags:['Thali','Unlimited'],img:'img/mutton-thali.jpg'},
+{id:1105,cat:'थाळी (अनलिमिटेड)',name:'फिश थाळी (Fish Thali)',desc:'Unlimited fish thali',price:'₹420',tags:['Thali','Unlimited'],img:'img/fish-thali.jpg'},
+{id:1106,cat:'थाळी (अनलिमिटेड)',name:'प्रॉन थाळी (Prawn Thali)',desc:'Unlimited prawn thali',price:'₹430',tags:['Thali','Unlimited'],img:'img/prawn-thali.jpg'},
+{id:1107,cat:'थाळी (अनलिमिटेड)',name:'एग थाळी (Egg Thali)',desc:'Unlimited egg thali',price:'₹300',tags:['Thali','Unlimited'],img:'img/egg-thali.jpg'},
+{id:1108,cat:'थाळी (अनलिमिटेड)',name:'पनीर थाळी (Paneer Thali)',desc:'Unlimited paneer thali',price:'₹300',tags:['Thali','Unlimited'],img:'img/paneer-thali.jpg'},
+{id:1109,cat:'थाळी (अनलिमिटेड)',name:'मशरूम थाळी (Mushroom Thali)',desc:'Unlimited mushroom thali',price:'₹280',tags:['Thali','Unlimited'],img:'img/mushroom-thali.jpg'},
+{id:1110,cat:'थाळी (अनलिमिटेड)',name:'स्पेशल थाळी (Special Thali)',desc:'Unlimited special thali',price:'₹500',tags:['Thali','Unlimited'],img:'img/special-thali.jpg'},
+{id:1111,cat:'थाळी (अनलिमिटेड)',name:'रॉयल थाळी (Royal Thali)',desc:'Unlimited royal thali',price:'₹600',tags:['Thali','Unlimited'],img:'img/royal-thali.jpg'},
+{id:1112,cat:'थाळी (अनलिमिटेड)',name:'महाराजा थाळी (Maharaja Thali)',desc:'Unlimited maharaja thali',price:'₹700',tags:['Thali','Unlimited'],img:'img/maharaja-thali.jpg'},
+{id:1113,cat:'थाळी (अनलिमिटेड)',name:'एम्परर थाळी (Emperor Thali)',desc:'Unlimited emperor thali',price:'₹800',tags:['Thali','Unlimited'],img:'img/emperor-thali.jpg'},
+{id:1114,cat:'थाळी (अनलिमिटेड)',name:'प्रेसिडेंट थाळी (President Thali)',desc:'Unlimited president thali',price:'₹900',tags:['Thali','Unlimited'],img:'img/president-thali.jpg'},
+{id:1115,cat:'थाळी (अनलिमिटेड)',name:'किंग थाळी (King Thali)',desc:'Unlimited king thali',price:'₹1000',tags:['Thali','Unlimited'],img:'img/king-thali.jpg'},
+{id:1116,cat:'थाळी (अनलिमिटेड)',name:'क्वीन थाळी (Queen Thali)',desc:'Unlimited queen thali',price:'₹950',tags:['Thali','Unlimited'],img:'img/queen-thali.jpg'},
+{id:1117,cat:'थाळी (अनलिमिटेड)',name:'प्रिंसेस थाळी (Princess Thali)',desc:'Unlimited princess thali',price:'₹850',tags:['Thali','Unlimited'],img:'img/princess-thali.jpg'},
+{id:1118,cat:'थाळी (अनलिमिटेड)',name:'प्रिंस थाळी (Prince Thali)',desc:'Unlimited prince thali',price:'₹850',tags:['Thali','Unlimited'],img:'img/prince-thali.jpg'},
+{id:1119,cat:'थाळी (अनलिमिटेड)',name:'ड्यूक थाळी (Duke Thali)',desc:'Unlimited duke thali',price:'₹750',tags:['Thali','Unlimited'],img:'img/duke-thali.jpg'},
+{id:1120,cat:'थाळी (अनलिमिटेड)',name:'डचेस थाळी (Duchess Thali)',desc:'Unlimited duchess thali',price:'₹750',tags:['Thali','Unlimited'],img:'img/duchess-thali.jpg'},
+{id:1121,cat:'थाळी (अनलिमिटेड)',name:'लॉर्ड थाळी (Lord Thali)',desc:'Unlimited lord thali',price:'₹650',tags:['Thali','Unlimited'],img:'img/lord-thali.jpg'},
+{id:1122,cat:'थाळी (अनलिमिटेड)',name:'लेडी थाळी (Lady Thali)',desc:'Unlimited lady thali',price:'₹650',tags:['Thali','Unlimited'],img:'img/lady-thali.jpg'},
+{id:1123,cat:'थाळी (अनलिमिटेड)',name:'सर थाळी (Sir Thali)',desc:'Unlimited sir thali',price:'₹550',tags:['Thali','Unlimited'],img:'img/sir-thali.jpg'},
+{id:1124,cat:'थाळी (अनलिमिटेड)',name:'मैडम थाळी (Madam Thali)',desc:'Unlimited madam thali',price:'₹550',tags:['Thali','Unlimited'],img:'img/madam-thali.jpg'},
+{id:1125,cat:'थाळी (अनलिमिटेड)',name:'मिस्टर थाळी (Mister Thali)',desc:'Unlimited mister thali',price:'₹450',tags:['Thali','Unlimited'],img:'img/mister-thali.jpg'},
+{id:1126,cat:'थाळी (अनलिमिटेड)',name:'मिसेस थाळी (Missus Thali)',desc:'Unlimited missus thali',price:'₹450',tags:['Thali','Unlimited'],img:'img/missus-thali.jpg'},
+{id:1127,cat:'थाळी (अनलिमिटेड)',name:'मिस थाळी (Miss Thali)',desc:'Unlimited miss thali',price:'₹450',tags:['Thali','Unlimited'],img:'img/miss-thali.jpg'},
+{id:1128,cat:'थाळी (अनलिमिटेड)',name:'मास्टर थाळी (Master Thali)',desc:'Unlimited master thali',price:'₹450',tags:['Thali','Unlimited'],img:'img/master-thali.jpg'},
+{id:1129,cat:'थाळी (अनलिमिटेड)',name:'बेबी थाळी (Baby Thali)',desc:'Unlimited baby thali',price:'₹350',tags:['Thali','Unlimited'],img:'img/baby-thali.jpg'},
+{id:1130,cat:'थाळी (अनलिमिटेड)',name:'किड्स थाळी (Kids Thali)',desc:'Unlimited kids thali',price:'₹350',tags:['Thali','Unlimited'],img:'img/kids-thali.jpg'}
+    ];
 
     // Cart functionality
     let cart = [];
     const cartButton = document.getElementById('cartButton');
-    const cartCount = document.getElementById('cartCount');
     const cartModal = document.getElementById('cartModal');
     const closeCart = document.getElementById('closeCart');
     const cartItems = document.getElementById('cartItems');
     const cartEmpty = document.getElementById('cartEmpty');
+    const cartCount = document.getElementById('cartCount');
     const cartTotal = document.getElementById('cartTotal');
     const clearCart = document.getElementById('clearCart');
     const whatsappOrder = document.getElementById('whatsappOrder');
+    const tableNumberInput = document.getElementById('tableNumber');
 
-    // Initialize cart from localStorage if available
-    function initCart() {
-      const savedCart = localStorage.getItem('hotelMaiCart');
-      if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartUI();
-      }
-    }
+    // Toggle cart modal
+    cartButton.addEventListener('click', () => {
+      cartModal.classList.add('open');
+    });
 
-    // Save cart to localStorage
-    function saveCart() {
-      localStorage.setItem('hotelMaiCart', JSON.stringify(cart));
-    }
+    closeCart.addEventListener('click', () => {
+      cartModal.classList.remove('open');
+    });
 
-    // Add item to cart
-    function addItemToCart(item) {
+    // Add to cart function
+    function addToCart(item) {
       const existingItem = cart.find(cartItem => cartItem.id === item.id);
       
       if (existingItem) {
@@ -958,24 +1236,17 @@
         });
       }
       
-      saveCart();
-      updateCartUI();
-      
-      // Show confirmation animation
-      cartCount.style.transform = 'scale(1.5)';
-      setTimeout(() => {
-        cartCount.style.transform = 'scale(1)';
-      }, 300);
+      updateCart();
+      // Cart modal will NOT open automatically
     }
 
-    // Remove item from cart
+    // Remove from cart function
     function removeFromCart(itemId) {
       cart = cart.filter(item => item.id !== itemId);
-      saveCart();
-      updateCartUI();
+      updateCart();
     }
 
-    // Update item quantity in cart
+    // Update quantity function
     function updateQuantity(itemId, change) {
       const item = cart.find(item => item.id === itemId);
       
@@ -985,167 +1256,167 @@
         if (item.quantity <= 0) {
           removeFromCart(itemId);
         } else {
-          saveCart();
-          updateCartUI();
+          updateCart();
         }
       }
     }
 
-    // Calculate total price
-    function calculateTotal() {
-      return cart.reduce((total, item) => {
-        const price = parseInt(item.price.replace('₹', '').replace(',', ''));
-        return total + (price * item.quantity);
-      }, 0);
-    }
-
-    // Update cart UI
-    function updateCartUI() {
+    // Update cart display
+    function updateCart() {
       // Update cart count
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
       cartCount.textContent = totalItems;
       
-      // Show/hide empty cart message
+      // Update cart items
       if (cart.length === 0) {
         cartEmpty.style.display = 'block';
+        cartItems.innerHTML = '';
       } else {
         cartEmpty.style.display = 'none';
+        
+        let itemsHTML = '';
+        let totalAmount = 0;
+        
+        cart.forEach(item => {
+          const price = parseInt(item.price.replace('₹', ''));
+          const itemTotal = price * item.quantity;
+          totalAmount += itemTotal;
+          
+          itemsHTML += `
+            <div class="cart-item">
+              <div class="item-info">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">${item.price}</div>
+              </div>
+              <div class="item-quantity">
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                <span class="quantity">${item.quantity}</span>
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                <button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartItems.innerHTML = itemsHTML;
+        cartTotal.textContent = `₹${totalAmount}`;
       }
-      
-      // Update cart items
-      cartItems.innerHTML = '';
-      cart.forEach(item => {
-        const price = parseInt(item.price.replace('₹', '').replace(',', ''));
-        const itemElement = document.createElement('div');
-        itemElement.className = 'cart-item';
-        itemElement.innerHTML = `
-          <div class="item-info">
-            <div class="item-name">${item.name}</div>
-            <div class="item-price">${item.price} × ${item.quantity} = ₹${price * item.quantity}</div>
-          </div>
-          <div class="item-quantity">
-            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-            <span class="quantity">${item.quantity}</span>
-            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-            <button class="remove-item" onclick="removeFromCart(${item.id})">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-              </svg>
-            </button>
-          </div>
-        `;
-        cartItems.appendChild(itemElement);
-      });
-      
-      // Update total
-      cartTotal.textContent = `₹${calculateTotal()}`;
     }
 
-    // Generate WhatsApp message
-    function generateWhatsAppMessage() {
-      let message = "Hello! I would like to place an order:\n\n";
-      
-      cart.forEach(item => {
-        message += `${item.name} - ${item.quantity} x ${item.price}\n`;
-      });
-      
-      message += `\nTotal: ₹${calculateTotal()}\n\nThank you!`;
-      
-      return encodeURIComponent(message);
-    }
-
-    // Event listeners
-    cartButton.addEventListener('click', () => {
-      cartModal.classList.add('open');
-    });
-    
-    closeCart.addEventListener('click', () => {
-      cartModal.classList.remove('open');
-    });
-    
+    // Clear cart
     clearCart.addEventListener('click', () => {
       cart = [];
-      saveCart();
-      updateCartUI();
+      updateCart();
     });
-    
+
+    // WhatsApp order function
     whatsappOrder.addEventListener('click', () => {
       if (cart.length === 0) {
         alert('Your cart is empty!');
         return;
       }
       
-      const phoneNumber = "917775959122"; // Replace with your WhatsApp business number
-      const message = generateWhatsAppMessage();
-      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    });
-
-    // Close modal when clicking outside
-    cartModal.addEventListener('click', (e) => {
-      if (e.target === cartModal) {
-        cartModal.classList.remove('open');
+      const tableNumber = tableNumberInput.value.trim();
+      if (!tableNumber) {
+        alert('Please enter your table number');
+        return;
       }
+      
+      let message = `Hello! I would like to place an order from Table: ${tableNumber}:\n\n`;
+      
+      cart.forEach(item => {
+        message += `${item.name} - ${item.quantity} x ${item.price}\n`;
+      });
+      
+      const totalAmount = cart.reduce((sum, item) => {
+        const price = parseInt(item.price.replace('₹', ''));
+        return sum + (price * item.quantity);
+      }, 0);
+      
+      message += `\nTotal: ₹${totalAmount}\n\nThank you!`;
+      
+      // Encode the message for WhatsApp URL
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/9284969878?text=${encodedMessage}`;
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappURL, '_blank');
     });
 
-    // Menu rendering functions
-    const menuGrid = document.getElementById('menuGrid');
-    const searchInput = document.getElementById('search');
-    const tabs = document.querySelectorAll('.tab');
-
-    function render(items){
-      menuGrid.innerHTML = items.map(i=>`
-        <article class="card" data-cat="${i.cat}">
-          <div class="thumb"><img src="${i.img}" alt="${i.name}"></div>
-          <div class="info">
-            <div style="display:flex;justify-content:space-between;align-items:start;gap:12px">
-              <div style="flex:1">
-                <h3 class="dish">${i.name}</h3>
-                <div class="desc">${i.desc}</div>
-              </div>
-              <div style="text-align:right">
-                <div class="price">${i.price}</div>
-                <div style="margin-top:8px">
-                  <button class="btn-primary" onclick="addItemToCartById(${i.id})">Add to Cart</button>
-                </div>
-              </div>
+    // Render menu items
+    function renderMenuItems(items) {
+      const menuGrid = document.getElementById('menuGrid');
+      
+      if (items.length === 0) {
+        menuGrid.innerHTML = '<p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:40px 20px">No items found</p>';
+        return;
+      }
+      
+      menuGrid.innerHTML = items.map(item => `
+        <div class="card" data-cat="${item.cat}">
+          <div class="card-header">
+            <div class="thumb">
+              <img src="${item.img}" alt="${item.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDMpIi8+CjxwYXRoIGQ9Ik03MCA4MEgxMTBNODAgNzBWOTBNNjUgOTVIMTA1TTk1IDY1VjEwNU02NSA2NVYxMDVNNzUgNzVIOThNNzUgODVIOThNNzUgOTVIOThNNzUgMTA1SDk4TTY1IDc1SDcyTTY1IDg1SDcyTTY1IDk1SDcyTTY1IDEwNUg3Mk0xMDggNzVIMTE1TTEwOCA4NUgxMTVNMTA4IDk1SDExNU0xMDggMTA1SDExNSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+'">
             </div>
-            <div class="meta-row">
-              <div class="tags">${i.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+            <div class="card-info">
+              <h3 class="dish">${item.name}</h3>
+              <p class="desc">${item.desc}</p>
+              <div class="tags">
+                ${item.tags.map(tag => `<span class="pill">${tag}</span>`).join('')}
+              </div>
             </div>
           </div>
-        </article>
+          <div class="card-footer">
+            <div class="price">${item.price}</div>
+            <button class="btn-primary" onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')})">Add to Cart</button>
+          </div>
+        </div>
       `).join('');
     }
 
-    // Function to add item to cart by ID
-    function addItemToCartById(id){
-      const item = data.find(d => d.id === id);
-      if (item) {
-        addItemToCart(item);
+    // Filter menu items by category
+    function filterByCategory(category) {
+      if (category === 'all') {
+        renderMenuItems(data);
+      } else {
+        const filteredItems = data.filter(item => item.cat === category);
+        renderMenuItems(filteredItems);
       }
     }
 
-    // initial render
-    render(data);
-    initCart();
+    // Search functionality
+    function searchItems(query) {
+      const filteredItems = data.filter(item => 
+        item.name.toLowerCase().includes(query.toLowerCase()) || 
+        item.desc.toLowerCase().includes(query.toLowerCase()) ||
+        item.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+      );
+      renderMenuItems(filteredItems);
+    }
 
-    // search
-    searchInput.addEventListener('input', ()=>{
-      const q = searchInput.value.trim().toLowerCase();
-      const filtered = data.filter(d=> (d.name+ ' '+ d.desc + ' ' + d.tags.join(' ')).toLowerCase().includes(q) );
-      render(filtered);
+    // Initialize the menu
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMenuItems(data);
+      
+      // Tab functionality
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          filterByCategory(tab.dataset.cat);
+        });
+      });
+      
+      // Search functionality
+      document.getElementById('search').addEventListener('input', (e) => {
+        searchItems(e.target.value);
+      });
     });
 
-    // tabs
-    tabs.forEach(t=>t.addEventListener('click', ()=>{
-      tabs.forEach(x=>x.classList.remove('active'));
-      t.classList.add('active');
-      const cat = t.getAttribute('data-cat');
-      if(cat==='all'){ render(data); return; }
-      render(data.filter(d=>d.cat===cat));
-    }));
+    // Make functions available globally
+    window.addToCart = addToCart;
+    window.removeFromCart = removeFromCart;
+    window.updateQuantity = updateQuantity;
   </script>
 </body>
-
 </html>
-
