@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hotel Jabardast</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <style>
+  <style>
     :root {
       --bg: #0b0b0d;
       --surface: #0f1114;
@@ -604,6 +603,37 @@
       font-size: 16px;
     }
 
+    /* Table Number Input */
+    .table-number-section {
+      margin-bottom: 20px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .table-number-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--gold2);
+    }
+
+    .table-number-input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 16px;
+    }
+
+    .table-number-input:focus {
+      outline: none;
+      border-color: var(--gold2);
+    }
+
     /* Print Button */
     .print-container {
       display: flex;
@@ -631,20 +661,19 @@
     }
 
     .title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-start;
-}
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: flex-start;
+    }
 
-.site-logo {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  margin-left: 10px;
-  border-radius: 8px; /* make corners slightly round */
-}
-
+    .site-logo {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-left: 10px;
+      border-radius: 8px; /* make corners slightly round */
+    }
 
     /* Tablet and Desktop Styles */
     @media (min-width: 768px) {
@@ -1391,4 +1420,3 @@
   </script>
 </body>
 </html>
-
